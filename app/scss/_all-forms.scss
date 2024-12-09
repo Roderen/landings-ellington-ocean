@@ -1,0 +1,30 @@
+.form-container {
+  position: relative;
+}
+
+.form-input {
+
+  &:focus~.form-label,
+  &:valid~.form-label,
+  &.input-valid~.form-label {
+    transform: translateY(-100%) scale(0.7);
+  }
+}
+
+.footer__form-button {
+  cursor: pointer;
+}
+
+
+
+html[dir="rtl"] {
+  .form-label {
+    left: inherit;
+    right: 0;
+    transform-origin: right;
+  }
+
+  .popup__form-label {
+    right: 15px;
+  }
+}

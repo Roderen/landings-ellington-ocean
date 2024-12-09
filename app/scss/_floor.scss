@@ -1,0 +1,166 @@
+.section-floor {
+  margin-top: 150px;
+  margin-bottom: 120px;
+}
+
+.floor {}
+
+.floor__title {
+  text-align: center;
+  @include CormorantSans(80px, 400, 80px);
+  color: $white-gray;
+  text-transform: uppercase;
+}
+
+.floor__info {
+  margin-top: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.floor__left {
+  margin-right: 20px;
+  width: 360px;
+}
+
+.floor__left-info {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.floor__right-title {
+  width: 320px;
+  @include CormorantSans(37px, 400, 37px);
+  color: $white-gray;
+  text-transform: uppercase;
+}
+
+.floor__right-list {
+  position: relative;
+  margin-top: 20px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $white-gray;
+  }
+  
+  li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 15px;
+    @include InterSans(16px, 400, 16px);
+    color: $white-gray;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    span {
+      max-width: 180px;
+    }
+  }
+}
+
+.floor__right-button {
+  margin-top: 45px;
+  width: 100%;
+}
+
+.floor__right-button__inner {
+  &.mobile {
+    display: none;
+  }
+}
+
+.floor__right-pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+
+  img {
+    margin-right: 5px;
+  }
+
+  span {
+    @include InterSans(12px, 400, 19px);
+    color: #9d9d9d;
+  }
+}
+
+.floor__right {
+  max-width: 740px;
+  width: 100%;
+}
+
+.floor__images {
+  height: auto;
+}
+
+.floor__images-item {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  height: 100%;
+
+  &.active {
+    display: flex;
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+      @include InterSans(12px, 400, 19px);
+      color: $white-gray;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.floor__arrows {
+  width: 130px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  column-gap: 10px;
+}
+
+.floor__arrow {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.floor__arrow-prev {
+  transform: rotate(-180deg);
+}
+
+.floor__arrow-next {}

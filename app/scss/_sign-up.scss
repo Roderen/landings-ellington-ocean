@@ -1,0 +1,180 @@
+.section-sing-up {
+  background-color: $dark-green;
+  padding: 60px 0;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+
+  @include _800 {
+    padding: 0 35px;
+  }
+
+  @include _560 {
+    padding: 0;
+  }
+}
+
+.sign-up__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include _768 {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.sign-up__img__mobile {
+  display: none;
+
+  @include _430 {
+    display: block;
+    margin-left: -10px;
+  }
+}
+
+.sign-up__title {
+  max-width: 600px;
+  @include CormorantSans(55px, 300, 66px);
+  color: $white-gray;
+  text-transform: uppercase;
+
+  @include _1024 {
+    font-size: 52px;
+  }
+
+  @include _430 {
+    font-size: 40px;
+  }
+
+  @include _360 {
+    font-size: 38px;
+  }
+
+  @include _320 {
+    font-size: 30px;
+  }
+}
+
+.sign-up__info {
+  max-width: 390px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+
+  @include _768 {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  @include _560 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  div {
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      margin-right: 10px;
+      margin-bottom: -12px;
+
+      @include _430 {
+        display: none;
+      }
+    }
+
+    span {
+      @include CormorantSans(40px, 400, inherit);
+      color: $white-gray;
+
+      @include _560 {
+        display: none;
+      }
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    @include InterSans(16px, 400, 25px);
+    color: $white-gray;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+.sign-up__form {
+  margin-top: 40px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+
+  @include _800 {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  @include _560 {
+    max-width: 450px;
+    row-gap: 10px;
+
+  }
+
+  input {
+    @include CormorantSans(16px, 400, inherit);
+    color: $white-gray;
+    border: 1px solid rgb(242, 233, 220);
+    outline: none;
+    background-color: transparent;
+    padding: 15px 20px;
+    width: 320px;
+    margin-right: 20px;
+
+    &::placeholder {
+      color: $white-gray;
+      opacity: .5;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    @include _800 {
+      margin-right: 0;
+    }
+
+    @include _560 {
+      width: calc(100% - 42px);
+    }
+  }
+
+  button {
+    cursor: pointer;
+    color: $white-gray;
+    background-color: $gold;
+    @include CormorantSans(25px, 400, inherit);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    border: none;
+    width: 400px;
+    padding: 15px 20px;
+
+    @include _560 {
+      width: 100%;
+    }
+  }
+}
+
+.sign-up__zero {
+  margin-top: 20px;
+  @include InterSans(14px, 400, inherit);
+  color: $white-gray;
+  opacity: 0.7;
+}

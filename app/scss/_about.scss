@@ -1,0 +1,65 @@
+.section-about {}
+
+.about {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.about__left {
+  color: $white-gray;
+  background-color: $dark-green;
+  max-width: 660px;
+  padding: 50px 40px 0 40px;
+  margin-top: -100px;
+  z-index: 1;
+  margin-right: 20px;
+  margin-left: -40px;
+}
+
+.about__under-title {
+  @include InterSans(16px, 400, 25px);
+  text-transform: uppercase
+}
+
+.about__title {
+  margin-top: 55px;
+  @include CormorantSans(50px, 400, inherit);
+  text-transform: uppercase;
+}
+
+.about__descr {
+  margin-top: 40px;
+  @include InterSans(16px, 400, 24px);
+
+  p {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.about__right {}
+
+.about__list {}
+
+.about__list-item {
+  margin-top: 40px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  span {
+    @include CormorantSans(70px, 400, inherit);
+    color: $gold;
+  }
+
+  p {
+    margin-top: 5px;
+    @include InterSans(16px, 300, 24px);
+    color: $white-gray;
+  }
+}

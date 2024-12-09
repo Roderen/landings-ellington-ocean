@@ -1,0 +1,270 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: 'Graphik';
+  overflow-y: auto;
+
+  @include _768 {
+    overflow-y: auto;
+  }
+
+  &.active {
+    display: flex;
+
+    @media screen and (max-height: 700px) {
+      display: block; 
+    }
+
+    .popup__inner {
+      display: block;
+      animation-name: popupInnerShow;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.popup-close {
+  cursor: pointer;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  right: 40px;
+
+  @include _768 {
+    top: 15px;
+    right: 15px;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 35px;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  &:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.popup__inner {
+  display: none;
+  opacity: 0;
+  background-color: #fff;
+  width: 560px;
+  margin: 50px auto 30px;
+
+  @include _768 {
+    max-width: 500px;
+    width: 100%;
+    margin: 80px auto 30px;
+  }
+}
+
+@-webkit-keyframes popupInnerShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupInnerShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-container {
+  padding: 40px 45px;
+
+  @include _375 {
+    padding: 40px 25px;
+  }
+}
+
+.popup__img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.popup__title {
+  @include CormorantSans(35px, 600, inherit);
+  margin: 0 auto;
+  color: #222222;
+  text-align: center;
+
+  @include _768 {
+    font-size: 38px;
+  }
+
+  @include _375 {
+    font-size: 30px;
+  }
+}
+
+.popup__subtitle {
+  @include CormorantSans(16px, 300, inherit);
+  color: #222222;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.popup__form {
+  margin-top: 30px;
+
+  &.thanks {
+    &.popup__form {
+      display: none;
+    }
+
+    &~.popup__thanks {
+      display: block;
+    }
+  }
+}
+
+.popup__form-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.popup__form-input {
+  @include CormorantSans(16px, 400, inherit);
+  outline: none;
+  color: #222222;
+  border: 1px solid #c9c9c9;
+  background-color: #fff;
+  padding: 22px 20px 12px 15px;
+  width: calc(100% - 37px);
+  border-radius: 5px;
+}
+
+.popup__form-input.invalid-input {
+  padding-left: 15px;
+  width: calc(100% - 37px);
+}
+
+.popup__form-label {
+  @include CormorantSans(16px, 400, inherit);
+  color: #222222;
+  opacity: .5;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  transition: 0.3s;
+  pointer-events: none;
+  transform-origin: left;
+}
+
+.popup__form-button {
+  @include CormorantSans(16px, 700, inherit);
+  cursor: pointer;
+  color: #fff;
+  background-color: $gold;
+  text-transform: uppercase;
+  padding: 18px 10px;
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-wrap-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-105px);
+  animation-name: flash;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+
+
+  .btn-effect {
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .4));
+    width: 45px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    transform: skewX(-45deg);
+  }
+}
+
+@keyframes flash {
+  20% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.popup__free {
+  @include InterSans(15px, 300, inherit);
+  margin-top: 20px;
+  color: #000000;
+  opacity: .7;
+  text-align: center;
+}
+
+.popup__descr {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #000;
+}
+
+.popup__thanks {
+  display: none;
+  width: 60%;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #62c584;
+  color: #fff;
+  @include CormorantSans(18px, 400, inherit);
+}

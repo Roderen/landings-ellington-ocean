@@ -1,0 +1,268 @@
+.section-intro {
+  padding-top: 15px;
+}
+
+.intro {
+}
+
+.intro__top {
+  display: flex;
+  align-items: flex-end;
+
+  @include mediaMax(480px) {
+    align-items: center;
+  }
+}
+
+.header__phone {
+  margin-left: auto;
+  margin-right: 40px;
+
+  @include mediaMax(560px) {
+    margin-right: 20px;
+  }
+
+  @include mediaMax(400px) {
+    margin-right: 10px;
+    margin-bottom: -5px;
+  }
+
+  .ct-widget__call-us .ct-widget__button {
+    @include mediaMax(480px) {
+      width: 40px;
+      height: 40px;
+      font-size: 0px;
+      min-height: auto;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    @include mediaMax(375px) {
+      zoom: 0.8;
+    }
+
+    &:before {
+      @include mediaMax(480px) {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.intro__logo {
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  margin-right: 20px;
+
+  @include mediaMax(480px) {
+    margin-right: 10px;
+  }
+
+  &-mpp {
+    margin-right: 20px;
+
+    @include mediaMax(560px) {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+
+  &-ellington {
+    filter: invert(100%);
+  }
+}
+
+.intro__lang {
+  position: relative;
+}
+
+.intro__lang-current {
+  position: relative;
+  cursor: pointer;
+  @include InterSans(14px, 300, 21px);
+  color: $white-gray;
+
+  @include mediaMax(375px) {
+    font-size: 12px;
+  }
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 3px 0 3px;
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    transform: translateY(-50%);
+    border-color: transparent transparent transparent transparent;
+    border-top-color: inherit;
+    transition: transform 0.3s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 50px;
+    height: 35px;
+    background-color: transparent;
+
+    @include mediaMax(560px) {
+      width: 40px;
+    }
+
+    @include mediaMax(430px) {
+      width: 30px;
+    }
+  }
+
+  &:hover {
+    &:before {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+
+    + .intro__lang-list {
+      display: block;
+    }
+  }
+}
+
+.intro__lang-list {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 18px 20px;
+  width: 30px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+
+  @include mediaMax(430px) {
+    padding: 15px 10px;
+  }
+
+  &:hover {
+    display: block;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    border: solid transparent;
+    border-bottom-color: #fff;
+    border-width: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 120px;
+    height: 110px;
+    background-color: transparent;
+    z-index: -1;
+  }
+
+  ul {
+    li {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        @include CormorantSans(18px, 600, inherit);
+        color: $black;
+
+        @include mediaMax(430px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.intro__info {
+  margin-top: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.intro__title {
+  margin-right: 20px;
+  width: 355px;
+  @include CormorantSans(100px, 400, 110px);
+  color: $white-gray;
+  text-transform: uppercase;
+}
+
+.intro__descr {
+  width: 550px;
+
+  p {
+    @include InterSans(16px, 300, 24px);
+    color: $white-gray;
+  }
+
+  .popup-button {
+    margin-top: 20px;
+    @include CormorantSans(20px, 300, inherit);
+    color: $white-gray;
+    text-transform: uppercase;
+    background-color: $gold;
+    padding: 15px 25px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.intro__video {
+  position: relative;
+  max-width: 1920px;
+  width: 100%;
+  margin: 50px auto 0;
+  height: 585px;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.intro__video-button {
+  position: absolute;
+  top: 160px;
+  left: 180px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+
+  img {
+    margin-right: 20px;
+  }
+
+  span {
+    width: 170px;
+    @include InterSans(16px, 700, 25px);
+    color: $white-gray;
+  }
+}

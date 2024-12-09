@@ -1,0 +1,22 @@
+.under-bg {
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &-one {
+    background-image: url('../images/img/under-bg-1.jpeg');
+  }
+
+  &-two {
+    background-image: url('../images/img/under-bg-2.jpeg');
+  }
+
+  &-three {
+    background-image: url('../images/img/under-bg-3.jpeg');
+  }
+
+  &-four {
+    background-image: url('../images/img/under-bg-4.jpeg');
+  }
+}

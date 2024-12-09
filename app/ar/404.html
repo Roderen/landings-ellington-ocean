@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+  <style>
+    .intro__descr p {
+      font-size: 28px;
+      line-height: inherit;
+    }
+
+    .intro__info {
+      position: relative;
+      align-items: center;
+    }
+
+    .intro__descr {
+      width: 470px;
+    }
+
+    .popup-button {
+      display: block;
+      text-align: center;
+      width: calc(100% - 50px);
+    }
+
+    .intro-404 {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      font-family: 'Cormorant Infant';
+      font-size: 380px;
+      font-weight: 700;
+      opacity: .2;
+      z-index: -1;
+    }
+
+    .intro__video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 1201px) {
+      .intro__descr {
+        width: auto;
+      }
+
+      .intro__descr .popup-button {
+        width: auto;
+      }
+    }
+
+    @media screen and (max-width: 1025px) {
+      .intro__descr p {
+        font-size: 24px;
+      }
+    }
+
+    @media screen and (max-width: 801px) {
+      .intro__info {
+        flex-direction: row;
+      }
+
+      .intro__descr {
+        width: 45%;
+      }
+
+      .intro__descr p {
+        font-size: 22px;
+      }
+
+      .intro__title {
+        font-size: 70px;
+        line-height: 72px;
+        width: 40%;
+      }
+    }
+
+    @media screen and (max-width: 561px) {
+      .intro__info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .intro__title {
+        width: 100%;
+      }
+
+      .intro__descr {
+        margin-top: 30px;
+        width: 70%;
+      }
+
+      .intro-404 {
+        font-size: 320px;
+      }
+
+      .intro__video {
+        height: 500px;
+      }
+    }
+
+    @media screen and (max-width: 430px) {
+      .intro__descr {
+        width: 100%;
+      }
+
+      .intro-404 {
+        font-size: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="main">
+    <section class="section-intro">
+      <div class="container">
+        <div class="intro">
+          <div class="intro__top">
+            <div class="intro__logo">
+              <img src="../images/icons/white-logo-mpp.svg" class="intro__logo-mpp" alt="Metropolitan Premium Properties"
+                width="173">
+              <img src="../images/icons/ellington.svg" class="intro__logo-ellington" alt="Ellington" width="145">
+            </div>
+
+          </div>
+          <div class="intro__info">
+            <div class="intro-404">404</div>
+
+            <h1 class="intro__title">أوشن هاوس</h1>
+
+            <div class="intro__descr">
+              <p>عذرا ، ولكن هذه الصفحة غير موجودة.</p>
+
+              <a href="./" class="popup-button gold-button">السعر المبدئي</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro__video">
+        <img src="../images/img/under-bg-4.jpeg" alt="">
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

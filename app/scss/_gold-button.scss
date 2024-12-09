@@ -1,0 +1,24 @@
+.gold-button {
+  cursor: pointer;
+  background-color: $gold;
+  @include CormorantSans(18px, 300, inherit);
+  color: #fff;
+  padding: 15px 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  @include mediaMax(768px) {
+    padding: 18px 5px;
+  }
+
+  @include mediaMax(321px) {
+    font-size: 14px !important;
+  }
+
+  &:hover {
+    background-color: #eeecd5!important;
+    color: #1a3a33!important;
+  }
+}
